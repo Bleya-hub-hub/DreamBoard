@@ -4,19 +4,27 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
 const app = express();
 
+const publicPath = path.join(__dirname, "public");
+const uploadsPath = path.join(publicPath, "uploads");
+
+// Fotoğraf klasörünün varlığını kontrol et
+fs.mkdirSync(uploadsPath, { recursive: true });
+
 app.use(express.json());
-app.use(express.static("public"));
+
+// Statik dosyaları sun
+app.use(express.static(publicPath));
 
 const Dream = require("./models/Dream");
 
-const path = require("path");
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "public/uploads");
+        cb(null, uploadsPath);
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname));
@@ -24,6 +32,11 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+// Ana sayfa
+app.get("/", (req, res) => {
+    res.sendFile(path.join(publicPath, "index.html"));
+});
 
 // MongoDB bağlantısı
 mongoose.connect(process.env.MONGODB_URI)
@@ -55,7 +68,6 @@ app.post("/dreams", upload.single("image"), async (req, res) => {
 
         await dream.save();
         res.status(201).json(dream);
-
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
