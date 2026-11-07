@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamBoard | Hayallerini Tasarla</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">✦ DreamBoard</div>
+
+        <div class="menu-title">MENÜ</div>
+        <div class="menu-item active">✧ Hayal Panom</div>
+        <div class="menu-item">♡ Hayallerim</div>
+        <div class="menu-item">✓ Tamamlananlar</div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="top">
+            <div>
+                <h1>Hayal panona hoş geldin! ✨</h1>
+                <div class="subtitle">Küçük hayaller, büyük başlangıçlar...</div>
+            </div>
+            <div class="profile">🌷 Dreamer</div>
+        </div>
+
+        <section class="hero">
+            <div>
+                <h2>Hayal et. Tasarla. Gerçekleştir.</h2>
+                <p>Geleceğini güzelleştiren fikirleri burada biriktir.</p>
+                <button class="add-btn" onclick="openModal()">＋ Hayal Ekle</button>
+            </div>
+            <div class="hero-art">🌙✨</div>
+        </section>
+
+        <!-- HAYAL İSTATİSTİKLERİ -->
+
+<section class="stats-section">
+
+    <h2>✧ Hayal Yolculuğum</h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card purple">
+            <span class="stat-icon">🌷</span>
+            <div class="stat-number" id="totalDreams">0</div>
+            <div class="stat-label">Toplam Hayal</div>
+        </div>
+
+        <div class="stat-card green">
+            <span class="stat-icon">✨</span>
+            <div class="stat-number" id="completedDreams">0</div>
+            <div class="stat-label">Tamamlanan</div>
+        </div>
+
+        <div class="stat-card pink">
+            <span class="stat-icon">🌙</span>
+            <div class="stat-number" id="pendingDreams">0</div>
+            <div class="stat-label">Bekleyen</div>
+        </div>
+
+    </div>
+
+    <div class="progress-area">
+        <div class="progress-heading">
+            <span>Hayallerimi gerçekleştirme yolculuğum</span>
+            <strong id="successRate">%0</strong>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+</section>
+
+        <div class="section-heading">
+            <h2>✦ Hayal Koleksiyonum</h2>
+            <span id="dreamCount">0 hayal</span>
+        </div>
+
+        <div class="grid" id="dreamGrid">
+            <div class="empty">Hayallerin burada seni bekliyor. ✨</div>
+        </div>
+
+    </main>
+</div>
+
+<!-- HAYAL EKLEME PENCERESİ -->
+
+<div class="modal" id="dreamModal">
+    <div class="modal-content">
+        <h2>✦ Yeni Hayal Oluştur</h2>
+
+        <input id="dreamTitle" placeholder="Hayalinin adı">
+
+        <textarea id="dreamDescription" placeholder="Hayalini anlat..." rows="3"></textarea>
+
+        <select id="dreamCategory">
+            <option value="">Kategori seç</option>
+            <option>Seyahat</option>
+            <option>Kariyer</option>
+            <option>Eğitim</option>
+            <option>Yaşam</option>
+            <option>Kişisel Gelişim</option>
+            <option>Diğer</option>
+        </select>
+
+        <input id="dreamImage" placeholder="Görsel bağlantısı (isteğe bağlı)">
+
+        <label for="dreamFile" class="image-upload-label">
+            ✿ Bilgisayardan fotoğraf seç
+        </label>
+
+        <input type="file" id="dreamFile" accept="image/*">
+
+        <div id="imagePreview"></div>
+
+        <select id="dreamColor">
+            <option value="#E9DDFB">Lavanta</option>
+            <option value="#FADCE8">Pembe</option>
+            <option value="#FFE8CF">Şeftali</option>
+            <option value="#DDF0E4">Adaçayı</option>
+            <option value="#DCEBFA">Buz mavisi</option>
+        </select>
+
+        <div class="modal-actions">
+            <button class="add-btn" id="saveButton" onclick="saveDream()">Kaydet ✨</button>
+            <button class="cancel-btn" onclick="closeModal()">Vazgeç</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

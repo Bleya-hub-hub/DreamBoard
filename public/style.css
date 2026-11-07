@@ -1,0 +1,727 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: #514365;
+    background:
+        radial-gradient(ellipse at 10% 10%, #f0ddff 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 85%, #ffe2f0 0%, transparent 35%),
+        #faf7ff;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SOL MENÜ */
+
+.sidebar {
+    width: 245px;
+    padding: 30px 20px;
+    background: #eee6ff;
+    min-height: 100vh;
+    border-right: 1px solid #e5d5fa;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #8058b5;
+    margin-bottom: 45px;
+    text-shadow: 0 0 10px #d8a5ff88;
+}
+
+.menu-title {
+    font-size: 11px;
+    color: #9c8bad;
+    letter-spacing: 2px;
+    margin: 25px 10px 12px;
+}
+
+.menu-item {
+    padding: 13px;
+    border-radius: 13px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .25s ease;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background: #fff;
+    color: #8058b5;
+    box-shadow: 0 4px 16px #d9a8ff55;
+}
+
+/* ANA ALAN */
+
+.main {
+    flex: 1;
+    padding: 40px;
+    max-width: 1400px;
+    min-width: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: #63458b;
+    text-shadow: 0 0 12px #d9a5ff55;
+}
+
+.subtitle {
+    color: #968aa4;
+}
+
+.profile {
+    background: #f6dce9;
+    padding: 14px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    color: #88527e;
+    box-shadow: 0 0 13px #f2b8dc55;
+}
+
+/* KARŞILAMA ALANI */
+
+.hero {
+    margin-top: 35px;
+    padding: 35px;
+    border-radius: 25px;
+    background: linear-gradient(115deg, #eadcff, #fce0f0, #fff0dc);
+    border: 1px solid #edc6ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 28px #d7a8ff30, 0 0 18px #ffc4e844;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    margin: 0 0 10px;
+    color: #654477;
+}
+
+.hero p {
+    color: #75677f;
+}
+
+.hero-art {
+    font-size: 75px;
+    filter: drop-shadow(0 0 12px #e5b1ff77);
+}
+
+/* BUTONLAR */
+
+.add-btn {
+    background: linear-gradient(110deg, #a77ae5, #e58dc7, #a78ce8);
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding: 13px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 5px 15px #c28bea55;
+    transition: .25s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px #c58bff88, 0 0 12px #f3a9e977;
+}
+
+/* KOLEKSİYON BAŞLIĞI */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 20px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: #63458b;
+    text-shadow: 0 0 10px #d9a5ff55;
+}
+
+#dreamCount {
+    color: #9664bd;
+    font-weight: 600;
+}
+
+/* HAYAL KARTLARI */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 350px));
+    gap: 25px;
+    align-items: start;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    padding: 17px;
+    border-radius: 24px;
+    background: white;
+    border: 1px solid #ead9fa;
+    box-shadow: 0 7px 22px #b98be522;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:nth-child(6n+1) {
+    background: linear-gradient(145deg, #fffaff, #f1e4ff);
+    border-color: #d9b8ff;
+    border-top: 5px solid #bd85f5;
+}
+
+.card:nth-child(6n+2) {
+    background: linear-gradient(145deg, #fffaff, #ffe4f1);
+    border-color: #ffb5d9;
+    border-top: 5px solid #fa8fc5;
+}
+
+.card:nth-child(6n+3) {
+    background: linear-gradient(145deg, #ffffff, #e1f5ff);
+    border-color: #a9e5ff;
+    border-top: 5px solid #65c9f5;
+}
+
+.card:nth-child(6n+4) {
+    background: linear-gradient(145deg, #ffffff, #e1faed);
+    border-color: #b9f0d2;
+    border-top: 5px solid #70d5a2;
+}
+
+.card:nth-child(6n+5) {
+    background: linear-gradient(145deg, #fffefa, #fff0c9);
+    border-color: #ffe39f;
+    border-top: 5px solid #f5c75d;
+}
+
+.card:nth-child(6n) {
+    background: linear-gradient(145deg, #fffafa, #ffe5dc);
+    border-color: #ffbead;
+    border-top: 5px solid #ff9d83;
+}
+
+.card:nth-child(6n+1):hover { box-shadow: 0 10px 28px #bd85f566; }
+.card:nth-child(6n+2):hover { box-shadow: 0 10px 28px #fa8fc566; }
+.card:nth-child(6n+3):hover { box-shadow: 0 10px 28px #65c9f566; }
+.card:nth-child(6n+4):hover { box-shadow: 0 10px 28px #70d5a266; }
+.card:nth-child(6n+5):hover { box-shadow: 0 10px 28px #f5c75d66; }
+.card:nth-child(6n):hover { box-shadow: 0 10px 28px #ff9d8366; }
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* FOTOĞRAFLAR */
+
+.card-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border-radius: 19px;
+    display: block;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 16px #b98be522;
+}
+
+.card-image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* FOTOĞRAFSIZ KART */
+
+.card-image.no-image {
+    min-height: 185px;
+    display: grid;
+    place-items: center;
+}
+
+.card:nth-child(6n+1) .card-image { background: #e7d3ff; }
+.card:nth-child(6n+2) .card-image { background: #ffd5e9; }
+.card:nth-child(6n+3) .card-image { background: #c9edff; }
+.card:nth-child(6n+4) .card-image { background: #c9f2dc; }
+.card:nth-child(6n+5) .card-image { background: #ffedb8; }
+.card:nth-child(6n) .card-image { background: #ffd6c9; }
+
+/* KART YAZILARI */
+
+.card h3 {
+    color: #7950a7;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 14px 0 10px;
+}
+
+.card p {
+    color: #8b8096;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tag {
+    display: inline-block;
+    background: #f1e9ff;
+    color: #8058b5;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 0 8px #dcb5ff44;
+}
+
+/* KART İŞLEMLERİ */
+
+.card-actions {
+    display: flex;
+    gap: 9px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card-actions button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #eee6ff;
+    color: #7653a3;
+    font-weight: 600;
+    transition: .25s ease;
+}
+
+.card-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #d5a5ff66;
+}
+
+.card-actions .delete {
+    background: #ffe5eb;
+    color: #bd5974;
+}
+
+/* EKLEME PENCERESİ */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #33254488;
+    backdrop-filter: blur(7px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #fffaff, #fff0f8);
+    padding: 28px;
+    border-radius: 22px;
+    width: 100%;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #e9c8ff;
+    box-shadow: 0 15px 40px #9970bb33, 0 0 16px #e5b6ff55;
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8058b5;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #e5dced;
+    border-radius: 10px;
+    font: inherit;
+    color: #514365;
+    background: white;
+    outline: none;
+    transition: .2s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    border-color: #c18af0;
+    box-shadow: 0 0 9px #dcb5ff66;
+}
+
+.modal-content textarea {
+    resize: vertical;
+}
+
+/* FOTOĞRAF YÜKLEME */
+
+.image-upload-label {
+    display: block;
+    padding: 13px;
+    margin: 12px 0;
+    border: 1px dashed #c99be8;
+    border-radius: 12px;
+    text-align: center;
+    color: #8058b5;
+    background: #f8efff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.image-upload-label:hover {
+    background: #f0e2ff;
+    box-shadow: 0 0 10px #dcb5ff66;
+}
+
+#dreamFile {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#imagePreview {
+    display: none;
+    margin: 12px 0;
+    text-align: center;
+}
+
+#imagePreview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 1px solid #e5dced;
+}
+
+/* PENCERE BUTONLARI */
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-actions button {
+    flex: 1;
+}
+
+.cancel-btn {
+    background: #eee9f4;
+    color: #665873;
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    padding: 12px;
+}
+
+/* BOŞ KOLEKSİYON */
+
+.empty {
+    color: #998da5;
+    text-align: center;
+    padding: 45px;
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #fff5fc, #f3eaff);
+    border: 1px dashed #d9b4f3;
+    border-radius: 22px;
+}
+
+/* MOBİL UYUMLULUK */
+
+@media(max-width: 700px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .hero-art {
+        font-size: 45px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top {
+        flex-wrap: wrap;
+    }
+
+/* TAMAMLANAN HAYAL KARTLARI */
+
+.card.completed {
+    opacity: 0.88;
+    border-top-color: #83c9a5;
+}
+
+.card.completed h3 {
+    color: #669b7d;
+}
+
+/* TAMAMLANDI ROZETİ */
+
+.completed-badge {
+    display: inline-block;
+    background: #dff5e8;
+    color: #478b65;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* TAMAMLANDI BUTONU */
+
+.card-actions .complete {
+    background: #dff5e8;
+    color: #478b65;
+}
+
+/* YENİDEN AKTİFLEŞTİR BUTONU */
+
+.card-actions .reactivate {
+    background: #f1e9ff;
+    color: #8058b5;
+}
+
+/* HAYAL İSTATİSTİKLERİ */
+
+.stats-section {
+    margin-top: 35px;
+}
+
+.stats-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #63458b;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.stat-card {
+    padding: 22px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    box-shadow: 0 6px 18px #b98be522;
+}
+
+.stat-card.purple {
+    background: #f0e5ff;
+    border-color: #dfc5ff;
+}
+
+.stat-card.green {
+    background: #e1f5e9;
+    border-color: #c2e9d0;
+}
+
+.stat-card.pink {
+    background: #ffe7f0;
+    border-color: #ffd0e1;
+}
+
+.stat-icon {
+    font-size: 25px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0 4px;
+    color: #7950a7;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #897995;
+    font-weight: 600;
+}
+
+/* İLERLEME ÇUBUĞU */
+
+.progress-area {
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid #ead9fa;
+    box-shadow: 0 5px 18px #b98be522;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #806b91;
+}
+
+.progress-heading strong {
+    color: #a16dca;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background: #eee5f7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #a77ae5, #e58dc7);
+    border-radius: 20px;
+    transition: width .5s ease;
+}
+
+@media(max-width: 700px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-heading {
+        flex-wrap: wrap;
+    }
+}
+
+/* İSTATİSTİKLER - SON TASARIM */
+
+.stats-section {
+    margin-top: 35px;
+    width: 100%;
+}
+
+.stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px;
+    width: 100%;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+    min-width: 0;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px #b98be522;
+    transition: transform .25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card.purple {
+    background: linear-gradient(135deg, #f3eaff, #e9d9ff);
+    border: 1px solid #dfc5ff;
+}
+
+.stat-card.green {
+    background: linear-gradient(135deg, #e9f9ef, #d8f1e2);
+    border: 1px solid #c2e9d0;
+}
+
+.stat-card.pink {
+    background: linear-gradient(135deg, #fff0f6, #ffe0ed);
+    border: 1px solid #ffd0e1;
+}
+
+.stat-icon {
+    font-size: 27px;
+}
+
+.stat-number {
+    font-size: 32px;
+    margin: 10px 0 4px;
+}
+
+.stat-label {
+    font-size: 14px;
+}
+
+.progress-area {
+    margin-top: 20px;
+    padding: 23px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid #ead9fa;
+    box-shadow: 0 5px 18px #b98be522;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    color: #806b91;
+}
+
+.progress-track {
+    height: 13px;
+}
+
+@media(max-width: 700px) {
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+}
